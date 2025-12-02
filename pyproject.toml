@@ -30,7 +30,17 @@ dependencies = [
     "transformers==4.51.3",
     "triton==3.3.0",
     "webdataset==0.2.111",
+    "xformers>=0.0.30",
 ]
+[tool.uv.extra-build-dependencies]
+xformers = ["torch"]
+[tool.uv.sources]
+xformers = { index = "pytorch-cu126" }
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
 [tool.black]
 line-length = 120
 preview = true

@@ -32,16 +32,23 @@ dependencies = [
     "triton==3.3.0",
     "webdataset==0.2.111",
     "xformers>=0.0.30",
+    "rich>=13.0.0",
 ]
 [tool.uv.extra-build-dependencies]
 xformers = ["torch"]
 [tool.uv.sources]
 xformers = { index = "pytorch-cu126" }
+wmar = { workspace = true, editable = true }
 
 [[tool.uv.index]]
 name = "pytorch-cu126"
 url = "https://download.pytorch.org/whl/cu126"
 explicit = true
+
+[tool.uv.workspace]
+members = [
+    ".",
+]
 [tool.black]
 line-length = 120
 preview = true
@@ -59,4 +66,9 @@ max-complexity = 15
 exclude = [
     "*",
     "!wmar/"
+]
+
+[dependency-groups]
+dev = [
+    "wmar",
 ]

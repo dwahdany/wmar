@@ -1,6 +1,7 @@
 [project]
 name = "wmar"
 version = "0.1.0"
+requires-python = "~=3.12.0"
 dependencies = [
     "accelerate==1.6.0",
     "compressai==1.2.6",
